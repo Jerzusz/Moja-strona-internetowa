@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebDev Pro – Tworzę strony, które sprzedają</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span>WebDev<span class="logo-accent">Pro</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">O mnie</a></li>
+        <li><a href="#offer" class="nav-link">Oferta</a></li>
+        <li><a href="#why" class="nav-link">Dlaczego ja</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#process" class="nav-link">Proces</a></li>
+        <li><a href="#opinions" class="nav-link">Opinie</a></li>
+        <li><a href="#contact" class="nav-cta-btn">Kontakt</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">⚡ Freelancer · Web Developer</div>
+      <h1 class="hero-title reveal">
+        Tworzę strony,<br />
+        <span class="gradient-text">które sprzedają</span>
+      </h1>
+      <p class="hero-subtitle reveal">
+        Profesjonalne strony internetowe, które przyciągają klientów,<br class="hide-mobile" />
+        budują wizerunek i generują realne zyski dla Twojego biznesu.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#contact" class="btn btn-primary">
+          <span>Zamów stronę</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#portfolio" class="btn btn-ghost">Zobacz portfolio</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-number counter" data-target="87">0</span>+
+          <span class="stat-label">Projektów</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number counter" data-target="100">0</span>%
+          <span class="stat-label">Zadowolonych klientów</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number counter" data-target="5">0</span>+
+          <span class="stat-label">Lat doświadczenia</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <div class="about-avatar">
+              <span>JK</span>
+            </div>
+            <div class="about-badge-floating badge-1">
+              <span>✦</span> 5 lat exp.
+            </div>
+            <div class="about-badge-floating badge-2">
+              <span>★</span> Top rated
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label reveal">O mnie</div>
+          <h2 class="section-title reveal">
+            Jestem Twoim partnerem<br />
+            <span class="gradient-text">w cyfrowym świecie</span>
+          </h2>
+          <p class="about-desc reveal">
+            Nazywam się Jakub i od ponad 5 lat tworzę nowoczesne strony internetowe
+            dla firm i przedsiębiorców. Łączę estetykę z funkcjonalnością —
+            każdy projekt to unikalne rozwiązanie dopasowane do Twoich celów biznesowych.
+          </p>
+          <div class="about-features">
+            <div class="about-feature reveal">
+              <div class="feature-icon">🚀</div>
+              <div>
+                <strong>Błyskawiczna realizacja</strong>
+                <p>Gotowa strona w 7–14 dni roboczych</p>
+              </div>
+            </div>
+            <div class="about-feature reveal">
+              <div class="feature-icon">🎨</div>
+              <div>
+                <strong>Nowoczesny design</strong>
+                <p>Inspirowany trendami Apple, Stripe, Webflow</p>
+              </div>
+            </div>
+            <div class="about-feature reveal">
+              <div class="feature-icon">🔍</div>
+              <div>
+                <strong>Optymalizacja SEO</strong>
+                <p>Widoczność w Google od pierwszego dnia</p>
+              </div>
+            </div>
+            <div class="about-feature reveal">
+              <div class="feature-icon">📱</div>
+              <div>
+                <strong>Pełna responsywność</strong>
+                <p>Perfekcyjna na każdym urządzeniu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="section offer" id="offer">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Oferta</div>
+        <h2 class="section-title reveal">Co mogę dla Ciebie <span class="gradient-text">stworzyć?</span></h2>
+        <p class="section-desc reveal">Kompleksowe usługi webowe dopasowane do każdej branży i budżetu</p>
+      </div>
+      <div class="offer-grid">
+        <div class="offer-card reveal">
+          <div class="card-glow"></div>
+          <div class="card-icon">🏢</div>
+          <h3>Strona firmowa</h3>
+          <p>Profesjonalna wizytówka Twojej firmy. Buduję zaufanie i przyciąga nowych klientów 24/7.</p>
+          <ul class="card-features">
+            <li>Do 10 podstron</li>
+            <li>Formularz kontaktowy</li>
+            <li>Integracja z mapami</li>
+            <li>Certyfikat SSL</li>
+          </ul>
+          <a href="#contact" class="card-btn">Zapytaj o wycenę</a>
+        </div>
+        <div class="offer-card offer-card-featured reveal">
+          <div class="card-glow"></div>
+          <div class="card-badge">Najpopularniejsze</div>
+          <div class="card-icon">📣</div>
+          <h3>Landing Page</h3>
+          <p>Jednostronicowa strona zoptymalizowana pod konwersję. Idealna do kampanii reklamowych.</p>
+          <ul class="card-features">
+            <li>Optymalizacja konwersji</li>
+            <li>A/B Testing</li>
+            <li>Animacje premium</li>
+            <li>Szybkie ładowanie &lt;1s</li>
+          </ul>
+          <a href="#contact" class="card-btn card-btn-primary">Zamów teraz</a>
+        </div>
+        <div class="offer-card reveal">
+          <div class="card-glow"></div>
+          <div class="card-icon">🛒</div>
+          <h3>Sklep internetowy</h3>
+          <p>Nowoczesny e-commerce z intuicyjnym panelem zarządzania. Sprzedawaj przez całą dobę.</p>
+          <ul class="card-features">
+            <li>Płatności online</li>
+            <li>System zarządzania</li>
+            <li>Integracja wysyłki</li>
+            <li>Panel produktów</li>
+          </ul>
+          <a href="#contact" class="card-btn">Zapytaj o wycenę</a>
+        </div>
+        <div class="offer-card offer-card-special reveal">
+          <div class="card-glow"></div>
+          <div class="card-badge card-badge-special">Nowość ✦</div>
+          <div class="card-icon">🧠</div>
+          <h3>System zarządzania firmą</h3>
+          <p>Inteligentny panel dla Twojego biznesu — wszystko w jednym miejscu, dostępne 24/7 z każdego urządzenia.</p>
+          <ul class="card-features">
+            <li>Kalendarz i rezerwacje online</li>
+            <li>Prognozowane przychody & raporty</li>
+            <li>Rozliczenia i zarobki pracowników</li>
+            <li>Dashboard live z KPI firmy</li>
+          </ul>
+          <a href="#contact" class="card-btn">Zapytaj o wycenę</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <div class="section-label reveal">Dlaczego ja</div>
+          <h2 class="section-title reveal">Wybieram jakość<br /><span class="gradient-text">ponad wszystko</span></h2>
+          <p class="section-desc reveal">
+            Każdy projekt traktuję jak własny biznes. Dostarczam nie tylko kod,
+            ale realne rezultaty dla Twojej firmy.
+          </p>
+          <div class="why-benefits">
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>Szybka realizacja</strong>
+                <p>Strona gotowa w rekordowym czasie bez kompromisów jakościowych</p>
+              </div>
+            </div>
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>Nowoczesny design</strong>
+                <p>Projekty na poziomie światowych agencji premium</p>
+              </div>
+            </div>
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>SEO w standardzie</strong>
+                <p>Każda strona zoptymalizowana pod Google od pierwszego dnia</p>
+              </div>
+            </div>
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>Wsparcie po oddaniu</strong>
+                <p>Nie zostawiam Cię po zakończeniu projektu</p>
+              </div>
+            </div>
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>Pełna responsywność</strong>
+                <p>Perfekcyjne działanie na każdym urządzeniu i przeglądarce</p>
+              </div>
+            </div>
+            <div class="why-benefit reveal">
+              <div class="benefit-check">✓</div>
+              <div>
+                <strong>Przejrzysta komunikacja</strong>
+                <p>Regularne aktualizacje postępów i bezpośredni kontakt</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal">
+          <div class="why-card glass-card">
+            <div class="why-card-header">
+              <span class="wc-dot red"></span>
+              <span class="wc-dot yellow"></span>
+              <span class="wc-dot green"></span>
+            </div>
+            <div class="code-lines">
+              <div class="code-line"><span class="code-kw">const</span> <span class="code-var">result</span> = <span class="code-fn">buildWebsite</span>({</div>
+              <div class="code-line pl-2"><span class="code-prop">design</span>: <span class="code-str">'premium'</span>,</div>
+              <div class="code-line pl-2"><span class="code-prop">performance</span>: <span class="code-num">100</span>,</div>
+              <div class="code-line pl-2"><span class="code-prop">seo</span>: <span class="code-bool">true</span>,</div>
+              <div class="code-line pl-2"><span class="code-prop">responsive</span>: <span class="code-bool">true</span>,</div>
+              <div class="code-line pl-2"><span class="code-prop">deadline</span>: <span class="code-str">'7 days'</span>,</div>
+              <div class="code-line">});</div>
+              <div class="code-line">&nbsp;</div>
+              <div class="code-line"><span class="code-comment">// → Twoja strona gotowa! ✨</span></div>
+            </div>
+          </div>
+          <div class="why-stats-mini">
+            <div class="mini-stat glass-card">
+              <div class="mini-stat-value gradient-text">99%</div>
+              <div class="mini-stat-label">Lighthouse Score</div>
+            </div>
+            <div class="mini-stat glass-card">
+              <div class="mini-stat-value gradient-text">&lt;1s</div>
+              <div class="mini-stat-label">Czas ładowania</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Portfolio</div>
+        <h2 class="section-title reveal">Projekty, którymi <span class="gradient-text">się szczycę</span></h2>
+        <p class="section-desc reveal">Każdy projekt to unikalna historia sukcesu</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal" data-category="landing">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-1">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-hero-bg"></div>
+                  <div class="mock-line fat"></div>
+                  <div class="mock-line medium"></div>
+                  <div class="mock-btn-rect"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Landing Page</span>
+              <h3>FitLife Studio</h3>
+              <p>Landing page dla siłowni premium z animacjami i formularzem zapisu</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="corporate">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-2">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-nav"></div>
+                  <div class="mock-cards">
+                    <div class="mock-card-sm"></div>
+                    <div class="mock-card-sm"></div>
+                    <div class="mock-card-sm"></div>
+                  </div>
+                  <div class="mock-line thin"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Strona firmowa</span>
+              <h3>TechCorp Solutions</h3>
+              <p>Wielojęzyczna strona korporacyjna z systemem CMS</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="shop">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-3">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-nav"></div>
+                  <div class="mock-product-grid">
+                    <div class="mock-product"></div>
+                    <div class="mock-product"></div>
+                    <div class="mock-product"></div>
+                    <div class="mock-product"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Sklep online</span>
+              <h3>LuxeShop</h3>
+              <p>Sklep z odzieżą premium, integracja płatności Stripe</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="landing">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-4">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-hero-bg2"></div>
+                  <div class="mock-line fat"></div>
+                  <div class="mock-line medium"></div>
+                  <div class="mock-stats-row">
+                    <div class="mock-stat-box"></div>
+                    <div class="mock-stat-box"></div>
+                    <div class="mock-stat-box"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">SaaS Landing</span>
+              <h3>CloudSync App</h3>
+              <p>Landing page dla aplikacji SaaS z sekcją pricing</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="corporate">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-5">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-split">
+                    <div class="mock-split-img"></div>
+                    <div class="mock-split-text">
+                      <div class="mock-line fat short"></div>
+                      <div class="mock-line thin"></div>
+                      <div class="mock-line thin"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Portfolio</span>
+              <h3>Studio Architektury</h3>
+              <p>Eleganckie portfolio dla biura architektonicznego</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="shop">
+          <div class="portfolio-img">
+            <div class="portfolio-mock mock-6">
+              <div class="mock-browser">
+                <div class="mock-bar"><span></span><span></span><span></span></div>
+                <div class="mock-content">
+                  <div class="mock-hero-bg3"></div>
+                  <div class="mock-features-row">
+                    <div class="mock-feature-box"></div>
+                    <div class="mock-feature-box"></div>
+                    <div class="mock-feature-box"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <span class="portfolio-tag">Restauracja</span>
+              <h3>Bistro Moderne</h3>
+              <p>Strona restauracji z systemem rezerwacji online</p>
+              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Proces</div>
+        <h2 class="section-title reveal">Jak wygląda <span class="gradient-text">nasza współpraca?</span></h2>
+        <p class="section-desc reveal">Prosty, przejrzysty proces od pierwszego kontaktu do gotowej strony</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon">💬</div>
+          <h3>Kontakt</h3>
+          <p>Opisujesz swoją wizję i potrzeby. Odpowiadam w ciągu 24h z bezpłatną wyceną.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon">🎨</div>
+          <h3>Projekt</h3>
+          <p>Tworzę makietę i design idealnie dopasowany do Twojej marki i oczekiwań.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon">⚙️</div>
+          <h3>Realizacja</h3>
+          <p>Programuję stronę zgodnie z zatwierdzonym projektem. Regularnie informuję o postępach.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="step-number">04</div>
+          <div class="step-icon">🚀</div>
+          <h3>Oddanie</h3>
+          <p>Uruchamiam stronę na serwerze, przekazuję dostępy i szkolę z obsługi. Wsparcie 30 dni.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONS -->
+  <section class="section opinions" id="opinions">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Opinie</div>
+        <h2 class="section-title reveal">Co mówią <span class="gradient-text">klienci?</span></h2>
+      </div>
+      <div class="opinions-slider-wrapper reveal">
+        <div class="opinions-slider" id="opinionsSlider">
+          <div class="opinion-card glass-card">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-text">"Jakub stworzył dla mnie stronę, która przekroczyła moje oczekiwania. Już po tygodniu od premiery mam 3 razy więcej zapytań od klientów. Polecam z czystym sumieniem!"</p>
+            <div class="opinion-author">
+              <div class="author-avatar">MK</div>
+              <div>
+                <strong>Marta K.</strong>
+                <span>Klientka</span>
+              </div>
+            </div>
+          </div>
+          <div class="opinion-card glass-card">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-text">"Profesjonalizm na najwyższym poziomie. Strona została dostarczona przed terminem, wygląda fantastycznie i działa błyskawicznie. Jakub to prawdziwy ekspert w swoim fachu."</p>
+            <div class="opinion-author">
+              <div class="author-avatar">TN</div>
+              <div>
+                <strong>Tomasz N.</strong>
+                <span>Klient</span>
+              </div>
+            </div>
+          </div>
+          <div class="opinion-card glass-card">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-text">"Zamawiałem landing page pod kampanię Google Ads. Konwersja wzrosła z 1.2% do 4.7%! To mówi samo za siebie. Jakub naprawdę rozumie co robi i zależy mu na wynikach klienta."</p>
+            <div class="opinion-author">
+              <div class="author-avatar">PW</div>
+              <div>
+                <strong>Piotr W.</strong>
+                <span>Klient</span>
+              </div>
+            </div>
+          </div>
+          <div class="opinion-card glass-card">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-text">"Drugi projekt z Jakubem i znowu jestem zachwycona. Sklep internetowy działa perfekcyjnie, klienci chwalą intuicyjność, a sprzedaż wzrosła o 60% w pierwszym miesiącu."</p>
+            <div class="opinion-author">
+              <div class="author-avatar">AZ</div>
+              <div>
+                <strong>Anna Z.</strong>
+                <span>Klientka</span>
+              </div>
+            </div>
+          </div>
+          <div class="opinion-card glass-card">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-text">"Szybko, tanio, świetna jakość — zazwyczaj można wybrać tylko dwa z trzech. Jakub jakoś oferuje wszystkie trzy naraz. Strona gotowa w 9 dni, wygląda jak za 20k a kosztowała ułamek tego!"</p>
+            <div class="opinion-author">
+              <div class="author-avatar">KM</div>
+              <div>
+                <strong>Kamil M.</strong>
+                <span>Klient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="sliderPrev" aria-label="Poprzedni">‹</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="sliderNext" aria-label="Następny">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTER SECTION -->
+  <section class="section counters">
+    <div class="container">
+      <div class="counters-grid">
+        <div class="counter-item reveal">
+          <div class="counter-value gradient-text">
+            <span class="counter" data-target="87">0</span>+
+          </div>
+          <div class="counter-label">Zadowolonych klientów</div>
+        </div>
+        <div class="counter-item reveal">
+          <div class="counter-value gradient-text">
+            <span class="counter" data-target="120">0</span>+
+          </div>
+          <div class="counter-label">Zrealizowanych projektów</div>
+        </div>
+        <div class="counter-item reveal">
+          <div class="counter-value gradient-text">
+            <span class="counter" data-target="5">0</span>+
+          </div>
+          <div class="counter-label">Lat doświadczenia</div>
+        </div>
+        <div class="counter-item reveal">
+          <div class="counter-value gradient-text">
+            <span class="counter" data-target="99">0</span>%
+          </div>
+          <div class="counter-label">Pozytywnych opinii</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <div class="cta-glow"></div>
+        <div class="cta-content">
+          <div class="section-label">Zacznij teraz</div>
+          <h2 class="cta-title">Zacznij zarabiać dzięki<br /><span class="gradient-text">swojej stronie internetowej</span></h2>
+          <p class="cta-desc">Dołącz do grona zadowolonych klientów. Bezpłatna konsultacja i wycena w 24h.</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <span>Bezpłatna wycena</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+48123456789" class="btn btn-ghost btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.2 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+              Zadzwoń teraz
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Kontakt</div>
+        <h2 class="section-title reveal">Zacznijmy <span class="gradient-text">współpracę!</span></h2>
+        <p class="section-desc reveal">Wypełnij formularz lub napisz bezpośrednio. Odpowiem w ciągu 24 godzin.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass-card">
+            <h3>Dane kontaktowe</h3>
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:jakub@webdevpro.pl">jakub@webdevpro.pl</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <span class="contact-label">Telefon</span>
+                <a href="tel:+48123456789">+48 123 456 789</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">💼</div>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <a href="#">linkedin.com/in/jakub-k</a>
+              </div>
+            </div>
+            <div class="contact-availability">
+              <div class="availability-dot"></div>
+              <span>Dostępny dla nowych projektów</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal">
+          <form class="contact-form glass-card" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Imię i nazwisko</label>
+              <input type="text" id="name" name="name" placeholder="Jan Kowalski" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jan@firma.pl" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon (opcjonalnie)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="service">Interesuje mnie</label>
+              <select id="service" name="service">
+                <option value="">Wybierz usługę...</option>
+                <option value="landing">Landing Page</option>
+                <option value="corporate">Strona firmowa</option>
+                <option value="shop">Sklep internetowy</option>
+                <option value="other">Inne</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Wiadomość</label>
+              <textarea id="message" name="message" placeholder="Opisz swój projekt..." required rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Wyślij wiadomość</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <span>✅</span> Wiadomość wysłana! Odezwę się w ciągu 24h.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">⬡</span>
+            <span>WebDev<span class="logo-accent">Pro</span></span>
+          </a>
+          <p>Tworzę strony internetowe, które sprzedają. Profesjonalnie, szybko, nowocześnie.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">O mnie</a>
+          <a href="#offer">Oferta</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 WebDevPro. Wszelkie prawa zastrzeżone.</p>
+        <p>Designed & Coded with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
