@@ -747,8 +747,11 @@
     const el = document.getElementById('calcAmount');
     if (!el) return;
     el.classList.remove('flip');
-    void el.offsetWidth;
-    el.classList.add('flip');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.classList.add('flip');
+      });
+    });
     el.textContent = calcTotal().toLocaleString('pl-PL');
   }
 

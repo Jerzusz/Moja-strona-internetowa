@@ -172,11 +172,11 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="animations.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="animations.css" /></noscript>
-  <link rel="stylesheet" href="extras.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="extras.css" /></noscript>
+  <link rel="stylesheet" href="style.min.css" />
+  <link rel="stylesheet" href="animations.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="animations.min.css" /></noscript>
+  <link rel="stylesheet" href="extras.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="extras.min.css" /></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
@@ -226,23 +226,23 @@
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-bg-gradient"></div>
     <div class="hero-content">
-      <div class="hero-badge reveal">⚡ Freelancer · Web Developer</div>
-      <h1 class="hero-title reveal">
+      <div class="hero-badge reveal visible">⚡ Freelancer · Web Developer</div>
+      <h1 class="hero-title reveal visible">
         Tworzę strony,<br />
         <span class="gradient-text">które</span> <span class="gradient-text typewriter-rotate" data-words='["sprzedają","zarabiają","przyciągają","zachwycają"]'>sprzedają</span>
       </h1>
-      <p class="hero-subtitle reveal">
+      <p class="hero-subtitle reveal visible">
         Profesjonalne strony internetowe, które przyciągają klientów,<br class="hide-mobile" />
         budują wizerunek i generują realne zyski dla Twojego biznesu.
       </p>
-      <div class="hero-buttons reveal">
+      <div class="hero-buttons reveal visible">
         <a href="#contact" class="btn btn-primary">
           <span>Zamów stronę</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#portfolio" class="btn btn-ghost">Zobacz portfolio</a>
       </div>
-      <div class="hero-stats reveal">
+      <div class="hero-stats reveal visible">
         <div class="stat">
           <span class="stat-number counter" data-target="87">0</span>+
           <span class="stat-label">Projektów</span>
@@ -1280,7 +1280,7 @@
 
 
 
-  <script src="script.js" defer></script>
+  <script src="script.min.js" defer></script>
 
   <!-- TAWK.TO LIVE CHAT — uncomment and replace YOUR_TAWK_PROPERTY_ID when ready
   <script type="text/javascript">
