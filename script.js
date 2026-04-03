@@ -706,9 +706,23 @@
 // ===== NUMBERS STAGGER IN HERO =====
 (function initHeroReveal() {
   const heroElements = document.querySelectorAll('.hero-content .reveal');
-  heroElements.forEach((el, i) => {
-    el.style.transitionDelay = `${0.1 + i * 0.12}s`;
-    setTimeout(() => el.classList.add('visible'), 100 + i * 120);
+  if (!heroElements.length) return;
+
+  let shown = false;
+  function showHero() {
+    if (shown) return;
+    shown = true;
+    heroElements.forEach((el, i) => {
+      el.style.transitionDelay = `${0.1 + i * 0.12}s`;
+      el.classList.add('visible');
+    });
+  }
+
+  // Show after fonts load to prevent CLS from font swap
+  const fallback = setTimeout(showHero, 300);
+  document.fonts.ready.then(() => {
+    clearTimeout(fallback);
+    showHero();
   });
 })();
 
