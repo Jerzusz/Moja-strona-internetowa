@@ -1,6 +1,16 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Font fallback with matching metrics to prevent CLS */
+@font-face {
+  font-family: 'Inter-fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 :root {
   --primary: #6c63ff;
   --primary-2: #c471ed;
@@ -29,7 +39,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', 'Inter-fallback', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -57,6 +67,9 @@ select, input, textarea { font-family: inherit; }
   transform: translate(-50%, -50%);
   transition: transform 0.1s linear;
   mix-blend-mode: screen;
+}
+@media (max-width: 1024px), (hover: none) {
+  .cursor-glow { display: none !important; }
 }
 
 /* ===== TYPOGRAPHY ===== */

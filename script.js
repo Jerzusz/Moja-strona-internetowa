@@ -1039,7 +1039,7 @@
     setTimeout(() => {
       overlay.classList.add('visible');
       document.body.style.overflow = 'hidden';
-    }, 800);
+    }, 2500);
   }
 
   function hideModal() {
