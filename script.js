@@ -1,5 +1,5 @@
 /* ===========================
-   WebDevPro – script.js
+   DevWebPro – script.js
    =========================== */
 
 'use strict';
@@ -140,6 +140,18 @@
 
   const COLORS = ['rgba(108,99,255,', 'rgba(196,113,237,', 'rgba(0,210,255,', 'rgba(246,79,89,'];
 
+  // Mouse tracking for particle interaction
+  let mouse = { x: -9999, y: -9999 };
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
   class Particle {
     constructor() { this.reset(true); }
 
@@ -162,38 +174,47 @@
       this.y += this.speedY;
       this.twinkle += this.twinkleSpeed;
       this.life -= this.decay;
+
+      // Mouse repulsion
+      const dx = this.x - mouse.x;
+      const dy = this.y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        const force = (120 - dist) / 120;
+        this.x += (dx / dist) * force * 2;
+        this.y += (dy / dist) * force * 2;
+      }
+
       if (this.life <= 0 || this.y < -10) this.reset();
     }
 
     draw() {
       const twinkleOpacity = this.opacity * (0.6 + 0.4 * Math.sin(this.twinkle));
-      ctx.save();
       ctx.globalAlpha = twinkleOpacity * this.life;
       ctx.fillStyle = this.color + twinkleOpacity * this.life + ')';
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = this.color + '0.8)';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
-      ctx.restore();
     }
   }
 
   // Create particles
-  const COUNT = 120;
+  const COUNT = 50;
   for (let i = 0; i < COUNT; i++) particles.push(new Particle());
 
-  // Connection lines
+  // Connection lines (optimized: spatial skip)
   function drawConnections() {
     const maxDist = 100;
+    const maxDistSq = maxDist * maxDist;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
+        if (dx > maxDist || dx < -maxDist) continue;
         const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.08;
-          ctx.save();
+        if (dy > maxDist || dy < -maxDist) continue;
+        const distSq = dx * dx + dy * dy;
+        if (distSq < maxDistSq) {
+          const alpha = (1 - Math.sqrt(distSq) / maxDist) * 0.08;
           ctx.globalAlpha = alpha;
           ctx.strokeStyle = 'rgba(108,99,255,1)';
           ctx.lineWidth = 0.5;
@@ -201,10 +222,10 @@
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
-          ctx.restore();
         }
       }
     }
+    ctx.globalAlpha = 1;
   }
 
   function animate() {
@@ -246,8 +267,12 @@
     const startTime = performance.now();
 
     function ease(t) {
-      // Ease out cubic
-      return 1 - Math.pow(1 - t, 3);
+      // Elastic ease out with bounce
+      if (t < 0.7) {
+        return 1 - Math.pow(1 - t / 0.7, 3);
+      }
+      const bounce = (t - 0.7) / 0.3;
+      return 1 + Math.sin(bounce * Math.PI * 2) * 0.06 * (1 - bounce);
     }
 
     function update(now) {
@@ -427,22 +452,46 @@
       valid = false;
     }
 
+    // RODO consent check
+    const rodoConsent = form.querySelector('#rodoConsent');
+    if (rodoConsent && !rodoConsent.checked) {
+      const checkmark = rodoConsent.nextElementSibling;
+      if (checkmark) checkmark.style.borderColor = 'rgba(246,79,89,0.5)';
+      valid = false;
+    }
+
     if (!valid) return;
 
-    // Simulate send (no actual backend)
+    // Send via FormSubmit.co
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Wysyłanie...';
 
-    setTimeout(() => {
-      form.reset();
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        if (successMsg) {
+          successMsg.classList.add('show');
+          setTimeout(() => successMsg.classList.remove('show'), 5000);
+        }
+      } else {
+        alert('Wystąpił błąd przy wysyłaniu. Spróbuj ponownie.');
+      }
+    })
+    .catch(() => {
+      alert('Błąd połączenia. Sprawdź internet i spróbuj ponownie.');
+    })
+    .finally(() => {
       btn.disabled = false;
       btn.querySelector('span').textContent = 'Wyślij wiadomość';
-      if (successMsg) {
-        successMsg.classList.add('show');
-        setTimeout(() => successMsg.classList.remove('show'), 5000);
-      }
-    }, 1200);
+    });
   });
 
   // Remove error styling on input
@@ -451,27 +500,56 @@
       field.style.borderColor = '';
     });
   });
+
+  // Clear RODO checkbox error on change
+  const rodoConsent = form.querySelector('#rodoConsent');
+  if (rodoConsent) {
+    rodoConsent.addEventListener('change', () => {
+      const checkmark = rodoConsent.nextElementSibling;
+      if (checkmark) checkmark.style.borderColor = '';
+    });
+  }
 })();
 
-// ===== CARD TILT EFFECT =====
+// ===== CARD TILT EFFECT WITH SHINE (event delegation) =====
 (function initTilt() {
-  const cards = document.querySelectorAll('.offer-card, .portfolio-item, .process-step');
+  const containers = document.querySelectorAll('.offer-grid, .portfolio-grid, .process-timeline');
+  if (!containers.length) return;
 
+  // Pre-inject shine elements
+  const cards = document.querySelectorAll('.offer-card, .portfolio-item, .process-step');
   cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
+    const shine = document.createElement('div');
+    shine.className = 'card-shine';
+    card.appendChild(shine);
+  });
+
+  containers.forEach(container => {
+    container.addEventListener('mousemove', (e) => {
+      const card = e.target.closest('.offer-card, .portfolio-item, .process-step');
+      if (!card) return;
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
       const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-      card.style.transform = `perspective(800px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-6px)`;
+      card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-6px)`;
+
+      const shine = card.querySelector('.card-shine');
+      if (shine) {
+        const shineAngle = Math.atan2(y, x) * (180 / Math.PI) + 90;
+        shine.style.background = `linear-gradient(${shineAngle}deg, transparent 30%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.08) 55%, transparent 70%)`;
+        shine.style.opacity = '1';
+      }
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-      card.style.transition = 'transform 0.5s ease';
-      setTimeout(() => card.style.transition = '', 500);
-    });
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'transform 0.15s ease';
-    });
+    container.addEventListener('mouseleave', (e) => {
+      const card = e.target.closest('.offer-card, .portfolio-item, .process-step');
+      if (card) {
+        card.style.transform = '';
+        card.style.transition = 'transform 0.5s ease';
+        const shine = card.querySelector('.card-shine');
+        if (shine) shine.style.opacity = '0';
+        setTimeout(() => card.style.transition = '', 500);
+      }
+    }, true);
   });
 })();
 
@@ -493,32 +571,59 @@
 
 // ===== HERO HEADLINE TYPEWRITER EFFECT =====
 (function initTypewriter() {
-  const heroTitle = document.querySelector('.hero-title');
-  if (!heroTitle) return;
+  const el = document.querySelector('.typewriter-rotate');
+  if (!el) return;
 
-  // Just add a subtle cursor effect at end of first span
-  const gradientSpan = heroTitle.querySelector('.gradient-text');
-  if (!gradientSpan) return;
+  let words;
+  try {
+    words = JSON.parse(el.dataset.words);
+  } catch (e) { return; }
+  if (!words || words.length < 2) return;
 
+  // Add cursor
   const cursor = document.createElement('span');
-  cursor.style.cssText = `
-    display: inline-block;
-    width: 3px;
-    height: 0.85em;
-    background: linear-gradient(135deg, #6c63ff, #c471ed);
-    margin-left: 4px;
-    vertical-align: middle;
-    border-radius: 2px;
-    animation: blink 1s ease-in-out infinite;
-  `;
-  gradientSpan.after(cursor);
+  cursor.className = 'typewriter-cursor';
+  el.after(cursor);
 
-  // Remove cursor after 4 seconds
+  let wordIndex = 0;
+  let charIndex = words[0].length;
+  let isDeleting = false;
+  const typeSpeed = 80;
+  const deleteSpeed = 50;
+  const pauseEnd = 2000;
+  const pauseStart = 500;
+
+  function tick() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      charIndex--;
+      el.textContent = currentWord.substring(0, charIndex);
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(tick, pauseStart);
+        return;
+      }
+      setTimeout(tick, deleteSpeed);
+    } else {
+      charIndex++;
+      el.textContent = words[wordIndex].substring(0, charIndex);
+
+      if (charIndex === words[wordIndex].length) {
+        isDeleting = true;
+        setTimeout(tick, pauseEnd);
+        return;
+      }
+      setTimeout(tick, typeSpeed);
+    }
+  }
+
   setTimeout(() => {
-    cursor.style.animation = 'none';
-    cursor.style.opacity = '0';
-    cursor.style.transition = 'opacity 0.5s';
-  }, 4000);
+    isDeleting = true;
+    tick();
+  }, 3000);
 })();
 
 // ===== MAGNETIC BUTTONS =====
@@ -543,18 +648,41 @@
   });
 })();
 
-// ===== PARALLAX HERO CONTENT =====
+// ===== PARALLAX HERO CONTENT & SECTIONS =====
 (function initParallax() {
   const heroContent = document.querySelector('.hero-content');
   const heroBg = document.querySelector('.hero-bg-gradient');
   if (!heroContent) return;
 
+  // Parallax elements in other sections
+  const parallaxSections = document.querySelectorAll('.section-header, .cta-wrapper, .about-avatar-wrapper');
+
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > window.innerHeight) return;
-    heroContent.style.transform = `translateY(${scrollY * 0.25}px)`;
-    heroContent.style.opacity = 1 - scrollY / (window.innerHeight * 0.75);
-    if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.1}px)`;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+
+      // Hero parallax
+      if (scrollY < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrollY * 0.25}px)`;
+        heroContent.style.opacity = 1 - scrollY / (window.innerHeight * 0.75);
+        if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.1}px)`;
+      }
+
+      // Section parallax — subtle upward float effect
+      parallaxSections.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (visible) {
+          const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+          const offset = center * 0.04;
+          el.style.transform = `translateY(${offset}px)`;
+        }
+      });
+      ticking = false;
+    });
   }, { passive: true });
 })();
 
@@ -611,8 +739,8 @@
     document.querySelectorAll('#calcFeatures .calc-check-item input:checked').forEach(cb => {
       total += parseFloat(cb.value) || 0;
     });
-    total += timeChip ? (parseFloat(timeChip.dataset.value) || 0) : 0;
-    return Math.round(total);
+    const timeMultiplier = timeChip ? (parseFloat(timeChip.dataset.value) || 1) : 1;
+    return Math.round(total * timeMultiplier);
   }
 
   function updateDisplay() {
@@ -834,5 +962,99 @@
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') openLightbox(currentIndex - 1);
     if (e.key === 'ArrowRight') openLightbox(currentIndex + 1);
+  });
+})();
+
+// ===== DARK / LIGHT MODE TOGGLE =====
+(function initThemeToggle() {
+  const toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+
+// ===== COOKIE CONSENT MODAL =====
+(function initCookieConsent() {
+  const overlay = document.getElementById('cookieOverlay');
+  const banner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('cookieAccept');
+  const rejectBtn = document.getElementById('cookieReject');
+  const settingsBtn = document.getElementById('cookieSettings');
+  const settingsPanel = document.getElementById('cookieSettingsPanel');
+  const saveSettingsBtn = document.getElementById('cookieSaveSettings');
+  const analyticsCheck = document.getElementById('cookieAnalytics');
+  const marketingCheck = document.getElementById('cookieMarketing');
+  if (!overlay || !banner) return;
+
+  function getCookieConsent() {
+    try {
+      const data = localStorage.getItem('cookieConsent');
+      return data ? JSON.parse(data) : null;
+    } catch (e) { return null; }
+  }
+
+  function saveCookieConsent(consent) {
+    localStorage.setItem('cookieConsent', JSON.stringify(consent));
+    hideModal();
+    applyConsent(consent);
+  }
+
+  function applyConsent(consent) {
+    if (consent.analytics) {
+      // Enable Google Analytics etc.
+    }
+    if (consent.marketing) {
+      // Enable marketing pixels etc.
+    }
+  }
+
+  function showModal() {
+    setTimeout(() => {
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }, 800);
+  }
+
+  function hideModal() {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+  // Check if consent already given
+  const existing = getCookieConsent();
+  if (existing) {
+    applyConsent(existing);
+  } else {
+    showModal();
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    saveCookieConsent({ necessary: true, analytics: true, marketing: true });
+  });
+
+  rejectBtn.addEventListener('click', () => {
+    saveCookieConsent({ necessary: true, analytics: false, marketing: false });
+  });
+
+  settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.toggle('open');
+  });
+
+  saveSettingsBtn.addEventListener('click', () => {
+    saveCookieConsent({
+      necessary: true,
+      analytics: analyticsCheck.checked,
+      marketing: marketingCheck.checked,
+    });
   });
 })();

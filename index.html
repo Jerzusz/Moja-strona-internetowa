@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
@@ -14,32 +14,176 @@
   <meta property="og:description" content="Profesjonalne strony internetowe dla firm. Nowoczesny design, SEO, responsywność. Bezpłatna wycena w 24h." />
   <meta property="og:url" content="https://devwebpro.pl" />
   <meta property="og:locale" content="pl_PL" />
+  <meta property="og:site_name" content="DevWebPro" />
+  <meta property="og:image" content="https://devwebpro.pl/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="DevWebPro – Profesjonalne strony internetowe dla firm" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DevWebPro – Tworzę strony, które sprzedają" />
   <meta name="twitter:description" content="Profesjonalne strony internetowe dla firm. Nowoczesny design, SEO, responsywność." />
-  <!-- Schema.org LocalBusiness -->
+  <meta name="twitter:image" content="https://devwebpro.pl/og-image.jpg" />
+  <meta name="twitter:image:alt" content="DevWebPro – Profesjonalne strony internetowe dla firm" />
+  <!-- Schema.org ProfessionalService -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://devwebpro.pl/#business",
     "name": "DevWebPro",
-    "description": "Profesjonalne tworzenie stron internetowych dla firm i przedsiębiorców.",
+    "description": "Profesjonalne tworzenie stron internetowych dla firm i przedsiębiorców. Nowoczesny design, SEO, responsywność.",
     "url": "https://devwebpro.pl",
     "telephone": "+48725547142",
     "email": "devwebpropl@gmail.com",
-    "priceRange": "$$",
-    "areaServed": "PL",
-    "serviceType": ["Web Development", "Landing Page", "E-commerce", "SEO"],
-    "sameAs": []
+    "priceRange": "500 PLN - 5000 PLN",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Polska"
+    },
+    "serviceType": ["Tworzenie stron internetowych", "Landing Page", "Sklepy internetowe", "Strony firmowe", "Optymalizacja SEO"],
+    "image": "https://devwebpro.pl/og-image.jpg",
+    "logo": "https://devwebpro.pl/og-image.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "Michał J.",
+      "jobTitle": "Web Developer"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Marta K."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Michał stworzył dla mnie stronę, która przekroczyła moje oczekiwania. Już po tygodniu od premiery mam 3 razy więcej zapytań od klientów."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Tomasz N."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Profesjonalizm na najwyższym poziomie. Strona została dostarczona przed terminem, wygląda fantastycznie i działa błyskawicznie."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Piotr W."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Zamawiałem landing page pod kampanię Google Ads. Konwersja wzrosła z 1.2% do 4.7%!"
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Anna Z."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Sklep internetowy działa perfekcyjnie, klienci chwalą intuicyjność, a sprzedaż wzrosła o 60% w pierwszym miesiącu."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Kamil M."},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Szybko, tanio, świetna jakość. Strona gotowa w 9 dni, wygląda jak za 20k a kosztowała ułamek tego!"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Usługi Web Development",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Landing Page"}, "price": "1350", "priceCurrency": "PLN"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strona firmowa"}, "price": "3150", "priceCurrency": "PLN"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sklep internetowy"}, "price": "6300", "priceCurrency": "PLN"}
+      ]
+    }
+  }
+  </script>
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ile kosztuje strona internetowa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ceny zaczynają się od 1350 zł za prostą landing page, przez 3150 zł za stronę firmową, do 6300+ zł za sklep internetowy. Każda wycena jest indywidualna i bezpłatna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile czasu zajmuje realizacja projektu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standardowy czas realizacji to 7–14 dni roboczych od zatwierdzenia projektu. Przy trybie ekspresowym 3–5 dni za dodatkową opłatą."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy będę mógł samodzielnie edytować stronę?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak. Strony firmowe i sklepy dostarczam z panelem CMS, który pozwala edytować treści bez znajomości kodu. Po oddaniu projektu przeprowadzam krótkie szkolenie z obsługi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co potrzebuję przygotować przed startem projektu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wystarczy ogólna wizja strony i informacje o firmie. Przydają się: logo, zdjęcia, treści tekstowe oraz przykłady stron, które Ci się podobają."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy strona będzie widoczna w Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Każda strona jest tworzona z podstawową optymalizacją SEO: poprawna struktura nagłówków, meta tagi, szybkość ładowania, responsywność i dane strukturalne (schema.org)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy oferujesz hosting i domenę?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, w ofercie mam pakiet hostingu + domeny + SSL na pierwszy rok. Możesz też korzystać ze swojego hostingu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak wygląda płatność?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standardowo: 50% zaliczki na starcie, 50% po oddaniu gotowej strony do akceptacji. Wystawiam fakturę VAT lub rachunek."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co jeśli strona mi się nie spodoba?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "W ramach projektu uwzględniam rundy feedbacku — możesz zgłaszać uwagi na każdym etapie pracy. Zależy mi na tym, żebyś był dumny ze swojej strony."
+        }
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="animations.css" />
-  <link rel="stylesheet" href="extras.css" />
+  <link rel="stylesheet" href="animations.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="animations.css" /></noscript>
+  <link rel="stylesheet" href="extras.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="extras.css" /></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <link rel="canonical" href="https://devwebpro.pl/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' width='100' height='100' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='50' font-weight='900' fill='white' font-family='sans-serif'%3ED%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
 
@@ -47,11 +191,12 @@
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- NAVIGATION -->
+  <header>
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="logo">
         <span class="logo-icon">⬡</span>
-        <span>WebDev<span class="logo-accent">Pro</span></span>
+        <span>DevWeb<span class="logo-accent">Pro</span></span>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about" class="nav-link">O mnie</a></li>
@@ -63,11 +208,18 @@
         <li><a href="#faq" class="nav-link">FAQ</a></li>
         <li><a href="#contact" class="nav-cta-btn">Kontakt</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+        <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+  </header>
+
+  <main>
 
   <!-- HERO -->
   <section class="hero" id="hero">
@@ -77,7 +229,7 @@
       <div class="hero-badge reveal">⚡ Freelancer · Web Developer</div>
       <h1 class="hero-title reveal">
         Tworzę strony,<br />
-        <span class="gradient-text">które sprzedają</span>
+        <span class="gradient-text">które</span> <span class="gradient-text typewriter-rotate" data-words='["sprzedają","zarabiają","przyciągają","zachwycają"]'>sprzedają</span>
       </h1>
       <p class="hero-subtitle reveal">
         Profesjonalne strony internetowe, które przyciągają klientów,<br class="hide-mobile" />
@@ -119,35 +271,35 @@
       <p class="trust-bar-label">Technologie i narzędzia, których używam:</p>
       <div class="trust-logos">
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor" opacity=".3"/><path d="M11 8H9v8h2V8zm4 0h-2v8h2V8z" fill="currentColor"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor" opacity=".3"/><path d="M11 8H9v8h2V8zm4 0h-2v8h2V8z" fill="currentColor"/></svg>
           <span>React</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
           <span>HTML/CSS</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873c-.736-.345-1.554-.585-1.797-1.14c-.091-.33-.105-.51-.046-.705c.15-.646.915-.84 1.515-.66c.39.12.75.42.976.9c1.034-.676 1.034-.676 1.755-1.125c-.27-.42-.404-.601-.586-.78c-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005c-1.14 1.291-.811 3.541.569 4.471c1.365 1.02 3.361 1.244 3.616 2.205c.24 1.17-.87 1.545-1.966 1.41c-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109c1.74 1.756 6.09 1.666 6.871-1.004c.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805c0 1.232.063 2.363-.138 2.711c-.33.689-1.18.601-1.566.48c-.396-.196-.597-.466-.83-.855c-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517c.855.51 2.004.675 3.207.405c.783-.226 1.458-.691 1.811-1.411c.51-.93.402-2.07.397-3.346c.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873c-.736-.345-1.554-.585-1.797-1.14c-.091-.33-.105-.51-.046-.705c.15-.646.915-.84 1.515-.66c.39.12.75.42.976.9c1.034-.676 1.034-.676 1.755-1.125c-.27-.42-.404-.601-.586-.78c-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005c-1.14 1.291-.811 3.541.569 4.471c1.365 1.02 3.361 1.244 3.616 2.205c.24 1.17-.87 1.545-1.966 1.41c-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109c1.74 1.756 6.09 1.666 6.871-1.004c.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805c0 1.232.063 2.363-.138 2.711c-.33.689-1.18.601-1.566.48c-.396-.196-.597-.466-.83-.855c-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517c.855.51 2.004.675 3.207.405c.783-.226 1.458-.691 1.811-1.411c.51-.93.402-2.07.397-3.346c.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
           <span>JavaScript</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825l-3.717 3.765l-.004-.005l-3.15-3.168A5.406 5.406 0 0 0 12 6.17c-2.06 0-3.971 1.157-4.979 3.006A5.406 5.406 0 0 0 6.17 12c0 2.06 1.157 3.971 3.006 4.979c.84.469 1.789.721 2.747.721c.958 0 1.908-.252 2.747-.72l3.151-3.168l3.716 3.765C19.422 19.57 17.047 21 14.324 21c-5.698 0-9.324-4.701-9.324-9c0-4.299 3.626-9 9.324-9c2.723 0 5.098 1.43 7.145 3.825z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825l-3.717 3.765l-.004-.005l-3.15-3.168A5.406 5.406 0 0 0 12 6.17c-2.06 0-3.971 1.157-4.979 3.006A5.406 5.406 0 0 0 6.17 12c0 2.06 1.157 3.971 3.006 4.979c.84.469 1.789.721 2.747.721c.958 0 1.908-.252 2.747-.72l3.151-3.168l3.716 3.765C19.422 19.57 17.047 21 14.324 21c-5.698 0-9.324-4.701-9.324-9c0-4.299 3.626-9 9.324-9c2.723 0 5.098 1.43 7.145 3.825z"/></svg>
           <span>WordPress</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.586v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.586v8.98zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117v-6.038H8.148zm4.587 7.51v-8.981h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491h-4.588zm1.471-7.51v6.039h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.02-3.019-3.02h-3.117z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.586v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.586v8.98zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019h3.117v-6.038H8.148zm4.587 7.51v-8.981h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491h-4.588zm1.471-7.51v6.039h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.02-3.019-3.02h-3.117z"/></svg>
           <span>Figma</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.303 12.6.749 13.5 1.5 13.5h7.54l-.799 9.464c-.015.986 1.26 1.41 1.874.637l9.262-11.653c.46-.55.014-1.448-.737-1.448H11.1l.8-9.464z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.303 12.6.749 13.5 1.5 13.5h7.54l-.799 9.464c-.015.986 1.26 1.41 1.874.637l9.262-11.653c.46-.55.014-1.448-.737-1.448H11.1l.8-9.464z"/></svg>
           <span>PageSpeed 100</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           <span>GitHub</span>
         </div>
         <div class="trust-logo">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           <span>Next.js</span>
         </div>
       </div>
@@ -162,7 +314,7 @@
           <div class="about-avatar-wrapper">
             <div class="avatar-glow"></div>
             <div class="about-avatar">
-              <span>WebDevPro</span>
+              <span>DevWebPro</span>
             </div>
             <div class="about-badge-floating badge-1">
               <span>✦</span> 5 lat exp.
@@ -392,52 +544,29 @@
       </div>
 
       <div class="portfolio-grid">
-        <div class="portfolio-item reveal" data-category="landing" data-img="" data-video="">
+        <div class="portfolio-item reveal" data-category="shop" data-img="" data-video="">
           <div class="portfolio-img">
-            <div class="portfolio-mock mock-1">
-              <div class="mock-browser">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-hero-bg"></div>
-                  <div class="mock-line fat"></div>
-                  <div class="mock-line medium"></div>
-                  <div class="mock-btn-rect"></div>
-                </div>
-              </div>
-            </div>
+            <img src="https://image.thum.io/get/width/600/crop/800/https://ms-plan.pl" alt="Qwapek Shop - sklep internetowy" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
           </div>
           <div class="portfolio-overlay">
             <div class="portfolio-info">
-              <span class="portfolio-tag">Landing Page</span>
-              <h3>FitLife Studio</h3>
-              <p>Landing page dla siłowni premium z animacjami i formularzem zapisu</p>
-              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+              <span class="portfolio-tag">Sklep online</span>
+              <h3>Qwapek Shop</h3>
+              <p>Sklep internetowy z produktami z palet zwrotów — elektronika, odzież, zabawki i więcej</p>
+              <a href="https://ms-plan.pl" target="_blank" rel="noopener" class="portfolio-link">Zobacz stronę →</a>
             </div>
           </div>
         </div>
         <div class="portfolio-item reveal" data-category="corporate" data-img="" data-video="">
           <div class="portfolio-img">
-            <div class="portfolio-mock mock-2">
-              <div class="mock-browser">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-nav"></div>
-                  <div class="mock-cards">
-                    <div class="mock-card-sm"></div>
-                    <div class="mock-card-sm"></div>
-                    <div class="mock-card-sm"></div>
-                  </div>
-                  <div class="mock-line thin"></div>
-                </div>
-              </div>
-            </div>
+            <img src="https://image.thum.io/get/width/600/crop/800/https://hbstudioo.pl" alt="Hello Beauty Studio - strona firmowa" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
           </div>
           <div class="portfolio-overlay">
             <div class="portfolio-info">
               <span class="portfolio-tag">Strona firmowa</span>
-              <h3>TechCorp Solutions</h3>
-              <p>Wielojęzyczna strona korporacyjna z systemem CMS</p>
-              <a href="#contact" class="portfolio-link">Zamów similar →</a>
+              <h3>Hello Beauty Studio</h3>
+              <p>Strona studia fryzjerskiego z rezerwacją online, portfolio i kalkulatorem cen</p>
+              <a href="https://hbstudioo.pl" target="_blank" rel="noopener" class="portfolio-link">Zobacz stronę →</a>
             </div>
           </div>
         </div>
@@ -599,7 +728,7 @@
       </div>
       <div class="opinions-slider-wrapper reveal">
         <div class="opinions-slider" id="opinionsSlider">
-          <div class="opinion-card glass-card">
+          <article class="opinion-card glass-card">
             <div class="opinion-stars">★★★★★</div>
             <p class="opinion-text">"Michał stworzył dla mnie stronę, która przekroczyła moje oczekiwania. Już po tygodniu od premiery mam 3 razy więcej zapytań od klientów. Polecam z czystym sumieniem!"</p>
             <div class="opinion-author">
@@ -609,8 +738,8 @@
                 <span>Klientka</span>
               </div>
             </div>
-          </div>
-          <div class="opinion-card glass-card">
+          </article>
+          <article class="opinion-card glass-card">
             <div class="opinion-stars">★★★★★</div>
             <p class="opinion-text">"Profesjonalizm na najwyższym poziomie. Strona została dostarczona przed terminem, wygląda fantastycznie i działa błyskawicznie. Michał to prawdziwy ekspert w swoim fachu."</p>
             <div class="opinion-author">
@@ -620,8 +749,8 @@
                 <span>Klient</span>
               </div>
             </div>
-          </div>
-          <div class="opinion-card glass-card">
+          </article>
+          <article class="opinion-card glass-card">
             <div class="opinion-stars">★★★★★</div>
             <p class="opinion-text">"Zamawiałem landing page pod kampanię Google Ads. Konwersja wzrosła z 1.2% do 4.7%! To mówi samo za siebie. Michał naprawdę rozumie co robi i zależy mu na wynikach klienta."</p>
             <div class="opinion-author">
@@ -631,8 +760,8 @@
                 <span>Klient</span>
               </div>
             </div>
-          </div>
-          <div class="opinion-card glass-card">
+          </article>
+          <article class="opinion-card glass-card">
             <div class="opinion-stars">★★★★★</div>
             <p class="opinion-text">"Drugi projekt z Michałem i znowu jestem zachwycona. Sklep internetowy działa perfekcyjnie, klienci chwalą intuicyjność, a sprzedaż wzrosła o 60% w pierwszym miesiącu."</p>
             <div class="opinion-author">
@@ -642,8 +771,8 @@
                 <span>Klientka</span>
               </div>
             </div>
-          </div>
-          <div class="opinion-card glass-card">
+          </article>
+          <article class="opinion-card glass-card">
             <div class="opinion-stars">★★★★★</div>
             <p class="opinion-text">"Szybko, tanio, świetna jakość — zazwyczaj można wybrać tylko dwa z trzech. Michał jakoś oferuje wszystkie trzy naraz. Strona gotowa w 9 dni, wygląda jak za 20k a kosztowała ułamek tego!"</p>
             <div class="opinion-author">
@@ -653,7 +782,7 @@
                 <span>Klient</span>
               </div>
             </div>
-          </div>
+          </article>
         </div>
         <div class="slider-controls">
           <button class="slider-btn" id="sliderPrev" aria-label="Poprzedni">‹</button>
@@ -778,46 +907,46 @@
           <div class="calc-group">
             <label class="calc-group-label">Typ strony</label>
             <div class="calc-chips" id="calcType">
-              <button class="calc-chip active" data-value="500">Landing Page</button>
-              <button class="calc-chip" data-value="1200">Strona firmowa</button>
-              <button class="calc-chip" data-value="2500">Sklep internetowy</button>
-              <button class="calc-chip" data-value="3500">System zarządzania</button>
+              <button class="calc-chip active" data-value="1350">Landing Page</button>
+              <button class="calc-chip" data-value="3150">Strona firmowa</button>
+              <button class="calc-chip" data-value="6300">Sklep internetowy</button>
+              <button class="calc-chip" data-value="10800">System zarządzania</button>
             </div>
           </div>
           <div class="calc-group">
             <label class="calc-group-label">Dodatkowe funkcje</label>
             <div class="calc-checks" id="calcFeatures">
               <label class="calc-check-item">
-                <input type="checkbox" value="300" /> Blog / Aktualności
+                <input type="checkbox" value="1350" /> Blog / Aktualności
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="200" /> Formularz kontaktowy Pro
+                <input type="checkbox" value="540" /> Formularz kontaktowy Pro
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="400" /> System rezerwacji
+                <input type="checkbox" value="1350" /> System rezerwacji
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="250" /> Integracja płatności
+                <input type="checkbox" value="720" /> Integracja płatności
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="350" /> Panel administracyjny
+                <input type="checkbox" value="1080" /> Panel administracyjny
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="200" /> Wielojęzyczność (PL/EN)
+                <input type="checkbox" value="720" /> Wielojęzyczność (PL/EN)
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="150" /> Certyfikat SSL + hosting (1 rok)
+                <input type="checkbox" value="450" /> Certyfikat SSL + hosting (1 rok)
               </label>
               <label class="calc-check-item">
-                <input type="checkbox" value="300" /> Podłączenie Google Analytics + SEO Audit
+                <input type="checkbox" value="1350" /> Podłączenie Google Analytics + SEO Audit
               </label>
             </div>
           </div>
           <div class="calc-group">
             <label class="calc-group-label">Czas realizacji</label>
             <div class="calc-chips" id="calcTime">
-              <button class="calc-chip active" data-value="0">Standardowy (7–14 dni)</button>
-              <button class="calc-chip" data-value="200">Ekspresowy (3–5 dni)</button>
+              <button class="calc-chip active" data-value="1">Standardowy (7–14 dni)</button>
+              <button class="calc-chip" data-value="1.2">Ekspresowy (3–5 dni) +20%</button>
             </div>
           </div>
         </div>
@@ -826,7 +955,7 @@
             <div class="calc-result-label">Orientacyjna wycena</div>
             <div class="calc-price" id="calcPrice">
               <span class="calc-from">od</span>
-              <span class="calc-amount" id="calcAmount">500</span>
+              <span class="calc-amount" id="calcAmount">1 350</span>
               <span class="calc-currency">zł</span>
             </div>
             <div class="calc-note">Ostateczna cena zależy od szczegółów projektu. Wycena jest bezpłatna i niezobowiązująca.</div>
@@ -869,8 +998,6 @@
     </div>
   </section>
 
-  </section>
-
   <!-- FAQ -->
   <section class="section faq" id="faq">
     <div class="container">
@@ -880,16 +1007,16 @@
         <p class="section-desc reveal">Odpowiedzi na pytania, które zadaje większość klientów przed kontaktem</p>
       </div>
       <div class="faq-list reveal">
-        <div class="faq-item">
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Ile kosztuje strona internetowa?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Ceny zaczynają się od 500 zł za prostą landing page, przez 1200 zł za stronę firmową, do 2500+ zł za sklep internetowy. Każda wycena jest indywidualna i bezpłatna — wyślij do mnie wiadomość, a w ciągu 24h dostaniesz konkretną ofertę. Możesz też skorzystać z <a href="#calculator">kalkulatora wyceny</a> powyżej.</p>
+            <p>Ceny zaczynają się od 1350 zł za prostą landing page, przez 3150 zł za stronę firmową, do 6300+ zł za sklep internetowy. Każda wycena jest indywidualna i bezpłatna — wyślij do mnie wiadomość, a w ciągu 24h dostaniesz konkretną ofertę. Możesz też skorzystać z <a href="#calculator">kalkulatora wyceny</a> powyżej.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Ile czasu zajmuje realizacja projektu?</span>
             <span class="faq-icon">+</span>
@@ -897,8 +1024,8 @@
           <div class="faq-answer">
             <p>Standardowy czas realizacji to 7–14 dni roboczych od zatwierdzenia projektu. Jeśli zależy Ci na szybszym terminie, oferuję tryb ekspresowy (3–5 dni) za dodatkową opłatą. Czas zależy też od tego, jak sprawnie dostarczysz materiały (teksty, zdjęcia, logo).</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Czy będę mógł samodzielnie edytować stronę?</span>
             <span class="faq-icon">+</span>
@@ -906,8 +1033,8 @@
           <div class="faq-answer">
             <p>Tak. Strony firmowe i sklepy dostarczam z panelem CMS, który pozwala edytować treści bez znajomości kodu. Po oddaniu projektu przeprowadzam krótkie szkolenie z obsługi. Jeśli wolisz — mogę też zajmować się aktualizacjami w ramach abonamentu wsparcia.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Co potrzebuję przygotować przed startem projektu?</span>
             <span class="faq-icon">+</span>
@@ -915,17 +1042,17 @@
           <div class="faq-answer">
             <p>Wystarczy ogólna wizja strony i informacje o firmie. Przydają się: logo (jeśli posiadasz), zdjęcia, treści tekstowe oraz przykłady stron, które Ci się podobają. Jeśli nie masz któregoś z elementów — pomogę to rozwiązać, np. doradzę w kwestii copywritingu czy zakupu zdjęć stockowych.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Czy strona będzie widoczna w Google?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Każda strona jest tworzona z podstawową optymalizacją SEO: poprawna struktura nagłówków, meta tagi, szybkość ładowania, responsywność i dane strukturalne (schema.org). To solidna baza pod pozycjonowanie. Na wyższe pozycje w Google wpływa też contentt i linkbuilding — mogę doradzić co dalej.</p>
+            <p>Każda strona jest tworzona z podstawową optymalizacją SEO: poprawna struktura nagłówków, meta tagi, szybkość ładowania, responsywność i dane strukturalne (schema.org). To solidna baza pod pozycjonowanie. Na wyższe pozycje w Google wpływa też content i linkbuilding — mogę doradzić co dalej.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Czy oferujesz hosting i domenę?</span>
             <span class="faq-icon">+</span>
@@ -933,8 +1060,8 @@
           <div class="faq-answer">
             <p>Tak, w swojej ofercie mam pakiet hostingu + domeny + SSL na pierwszy rok. Możesz też korzystać ze swojego hostingu — dostosuję się do Twoich preferencji. Po wdrożeniu możesz zarządzać hostingiem samodzielnie lub zostawić to mnie.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Jak wygląda płatność?</span>
             <span class="faq-icon">+</span>
@@ -942,8 +1069,8 @@
           <div class="faq-answer">
             <p>Standardowo: 50% zaliczki na starcie, 50% po oddaniu gotowej strony do akceptacji. Przy mniejszych projektach możliwa jest płatność w całości po zakończeniu. Wystawiam fakturę VAT lub rachunek — do wyboru.</p>
           </div>
-        </div>
-        <div class="faq-item">
+        </article>
+        <article class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Co jeśli strona mi się nie spodoba?</span>
             <span class="faq-icon">+</span>
@@ -951,7 +1078,7 @@
           <div class="faq-answer">
             <p>Nigdy nie zostawię Cię z efektem, z którego nie jesteś zadowolony. W ramach projektu uwzględniam rundy feedbacku — możesz zgłaszać uwagi na każdym etapie pracy. Zależy mi na tym, żebyś był dumny ze swojej strony i chciał ją pokazywać.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -990,7 +1117,12 @@
           </div>
         </div>
         <div class="contact-form-wrapper reveal">
-          <form class="contact-form glass-card" id="contactForm" novalidate>
+          <form class="contact-form glass-card" id="contactForm" action="https://formsubmit.co/devwebpropl@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Nowe zapytanie ze strony DevWebPro">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_next" value="https://devwebpro.pl">
             <div class="form-group">
               <label for="name">Imię i nazwisko</label>
               <input type="text" id="name" name="name" placeholder="Jan Kowalski" required autocomplete="name" />
@@ -1016,6 +1148,13 @@
             <div class="form-group">
               <label for="message">Wiadomość</label>
               <textarea id="message" name="message" placeholder="Opisz swój projekt..." required rows="5"></textarea>
+            </div>
+            <div class="form-group form-consent">
+              <label class="consent-label">
+                <input type="checkbox" id="rodoConsent" name="rodoConsent" required />
+                <span class="consent-checkmark"></span>
+                <span class="consent-text">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="prywatnosc.html" target="_blank" rel="noopener">Polityką Prywatności</a> w celu odpowiedzi na moje zapytanie. *</span>
+              </label>
             </div>
             <button type="submit" class="btn btn-primary btn-full">
               <span>Wyślij wiadomość</span>
@@ -1054,13 +1193,15 @@
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">    <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
           <a href="#" class="logo">
             <span class="logo-icon">⬡</span>
-            <span>WebDev<span class="logo-accent">Pro</span></span>
+            <span>DevWeb<span class="logo-accent">Pro</span></span>
           </a>
           <p>Tworzę strony internetowe, które sprzedają. Profesjonalnie, szybko, nowocześnie.</p>
         </div>
@@ -1070,6 +1211,12 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#contact">Kontakt</a>
         </div>
+        <div class="footer-legal">
+          <span class="footer-legal-heading">Prawne</span>
+          <a href="prywatnosc.html#privacy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Polityka Prywatności</a>
+          <a href="prywatnosc.html#cookies"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><circle cx="11" cy="15" r="1.5" fill="currentColor"/></svg> Polityka Cookies</a>
+          <a href="prywatnosc.html#rodo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RODO</a>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 DevWebPro. Wszelkie prawa zastrzeżone.</p>
@@ -1078,20 +1225,78 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- COOKIE CONSENT MODAL -->
+  <div class="cookie-overlay" id="cookieOverlay">
+  <div class="cookie-modal" id="cookieBanner">
+      <div class="cookie-text">
+        <div class="cookie-icon">🍪</div>
+        <div>
+          <strong>Ta strona używa plików cookies</strong>
+          <p>Używamy cookies i podobnych technologii, aby zapewnić prawidłowe działanie strony, analizować ruch i personalizować treści. Możesz zarządzać swoimi preferencjami lub zaakceptować wszystkie cookies.</p>
+        </div>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost cookie-btn" id="cookieSettings">Ustawienia</button>
+        <button class="btn btn-ghost cookie-btn" id="cookieReject">Odrzuć</button>
+        <button class="btn btn-primary cookie-btn" id="cookieAccept">Akceptuję wszystkie</button>
+      </div>
+    <div class="cookie-settings-panel" id="cookieSettingsPanel">
+      <div class="cookie-setting-item">
+        <div class="cookie-setting-info">
+          <strong>Niezbędne</strong>
+          <p>Wymagane do prawidłowego działania strony. Nie można ich wyłączyć.</p>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" checked disabled />
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+      <div class="cookie-setting-item">
+        <div class="cookie-setting-info">
+          <strong>Analityczne</strong>
+          <p>Pomagają zrozumieć, jak odwiedzający korzystają ze strony (np. Google Analytics).</p>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookieAnalytics" />
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+      <div class="cookie-setting-item">
+        <div class="cookie-setting-info">
+          <strong>Marketingowe</strong>
+          <p>Służą do wyświetlania spersonalizowanych reklam i mierzenia ich skuteczności.</p>
+        </div>
+        <label class="cookie-switch">
+          <input type="checkbox" id="cookieMarketing" />
+          <span class="cookie-slider"></span>
+        </label>
+      </div>
+      <div class="cookie-settings-actions">
+        <button class="btn btn-primary cookie-btn" id="cookieSaveSettings">Zapisz ustawienia</button>
+      </div>
+    </div>
+  </div>
+  </div>
 
-  <!-- TAWK.TO LIVE CHAT -->
+
+
+  <script src="script.js" defer></script>
+
+  <!-- TAWK.TO LIVE CHAT — uncomment and replace YOUR_TAWK_PROPERTY_ID when ready
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/YOUR_TAWK_PROPERTY_ID/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/YOUR_TAWK_PROPERTY_ID/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      }, 3000);
+    });
   </script>
+  -->
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd projektu">

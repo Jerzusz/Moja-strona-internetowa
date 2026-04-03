@@ -1,5 +1,5 @@
 /* ===========================
-   WebDevPro – script.js
+   DevWebPro – script.js
    =========================== */
 
 'use strict';
